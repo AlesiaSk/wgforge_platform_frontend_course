@@ -12,9 +12,8 @@
  */
 export default function zipObject(keyArray, valueArray) {
   const resultObject = {};
-  for (let i = 0; i < keyArray.length; i++) {
-    resultObject[keyArray[i]] = valueArray[i];
-    console.log(resultObject);
+  for (const key in keyArray) {
+    resultObject[keyArray[key]] = valueArray[key];
   }
   return resultObject;
 }

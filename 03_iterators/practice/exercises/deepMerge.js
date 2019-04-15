@@ -27,5 +27,10 @@
  * //    }
  */
 export default function deepMerge(destinationObject, sourceObject) {
-  // ¯\_(ツ)_/¯
+  for (const key in sourceObject) {
+    if (sourceObject.hasOwnProperty(key)) {
+      destinationObject[key] = sourceObject[key];
+    }
+  }
+  return destinationObject;
 }
