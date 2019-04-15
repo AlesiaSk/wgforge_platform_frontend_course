@@ -26,11 +26,23 @@
  * //       count: 1
  * //    }
  */
+
 export default function deepMerge(destinationObject, sourceObject) {
   for (const key in sourceObject) {
     if (sourceObject.hasOwnProperty(key)) {
-      destinationObject[key] = sourceObject[key];
+      if (Array.isArray(sourceObject[key])) {
+        for (const value in sourceObject[key]) {
+          if (typeof sourceObject[key][value] === 'object') {
+            deepMerge(destinationObject[key][value], sourceObject[key][value]);
+          }
+        }
+      } else {
+        destinationObject[key] = sourceObject[key];
+      }
     }
   }
+  console.log('RESULT');
+
+  console.log(destinationObject);
   return destinationObject;
 }

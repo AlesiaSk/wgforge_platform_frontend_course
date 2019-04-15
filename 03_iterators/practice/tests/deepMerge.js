@@ -45,14 +45,32 @@ const sourceObject = {
   ]
 };
 
+const destinationObject1 = {
+  students: [{ name: 'Unit 1' }, { name: 'Unit 2' }],
+  label: 'backend',
+  count: 1
+};
+
+const sourceObject1 = {
+  students: [{ surname: 'Forge 1' }, { surname: 'Forge 2' }],
+  label: 'frontend'
+};
+
 test('deepMerge', t => {
   t.equal(typeof deepMerge, 'function');
 
   const deepMergeResult = deepMerge(destinationObject, sourceObject);
   const expectedMergeResult = _merge(destinationObject, sourceObject);
+  const deepMergeResult1 = deepMerge(destinationObject1, sourceObject1);
+  const expectedMergeResult1 = _merge(destinationObject1, sourceObject1);
 
   t.test('deep merge two objects', tt => {
     tt.deepEqual(deepMergeResult, expectedMergeResult);
+    tt.end();
+  });
+
+  t.test('deep merge two objects', tt => {
+    tt.deepEqual(deepMergeResult1, expectedMergeResult1);
     tt.end();
   });
 
