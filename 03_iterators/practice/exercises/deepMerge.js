@@ -29,20 +29,15 @@
 
 export default function deepMerge(destinationObject, sourceObject) {
   for (const key in sourceObject) {
-    if (sourceObject.hasOwnProperty(key)) {
-      if (Array.isArray(sourceObject[key])) {
-        for (const value in sourceObject[key]) {
-          if (typeof sourceObject[key][value] === 'object') {
-            deepMerge(destinationObject[key][value], sourceObject[key][value]);
-          }
+    if (Array.isArray(sourceObject[key])) {
+      for (const value in sourceObject[key]) {
+        if (typeof sourceObject[key][value] === 'object' && sourceObject[key][value] !== null) {
+          deepMerge(destinationObject[key][value], sourceObject[key][value]);
         }
-      } else {
-        destinationObject[key] = sourceObject[key];
       }
+    } else if (sourceObject[key]) {
+      destinationObject[key] = sourceObject[key];
     }
   }
-  console.log('RESULT');
-
-  console.log(destinationObject);
   return destinationObject;
 }

@@ -13,7 +13,9 @@
 export default function zipObject(keyArray, valueArray) {
   const resultObject = {};
   for (const key in keyArray) {
-    resultObject[keyArray[key]] = valueArray[key];
+    if (keyArray.hasOwnProperty(key)) {
+      resultObject[keyArray[key]] = valueArray[key];
+    }
   }
   return resultObject;
 }
