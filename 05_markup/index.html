@@ -86,13 +86,13 @@
   <div class="bg_power"></div>
 </div>
 <div class="background-tank">
-  <div class="tank"></div>
-  <div class="turret_streight"></div>
+  <div class="tank" id="tank"></div>
   <div class="turret_left"></div>
-  <div class="turret_right"></div>
+  <div class="turret_right" ></div>
+  <div class="turret_straight" id="turret"></div>
 </div>
 <main class="main"><!-- main__game -->
-  <section class="section section__game"><!-- section__open -->
+  <section class="section section__game" data-turretDirection="left"><!-- section__open -->
       <header>
       <h2 class="title">The<br><strong>Game</strong></h2>
       <p class="intro">Risk meets reward on the battlefield.
@@ -124,7 +124,7 @@
         attackers and defenders during a single-base engagement.</p>
     </article>
   </section>
-  <section class="section section__tank">
+  <section class="section section__tank" >
     <header>
       <h2 class="title">The <br><strong>Tanks</strong></h2>
       <p class="intro">Tanks pose incredible danger,
@@ -134,7 +134,7 @@
       </p>
     </header>
   </section>
-  <section class="section section__power">
+  <section class="section section__power" data-turretDirection="right">
     <header>
       <h2 class="title">The <br><strong>Power</strong></h2>
       <p class="intro">Revolutionary gameplay and
@@ -162,4 +162,5 @@
   </ul>
 </footer>
 </body>
+<script src="script.js"></script>
 </html>

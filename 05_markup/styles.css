@@ -173,9 +173,7 @@ body {
 }
 
 .inner_article:nth-child(2) {
-background: url("project/img/s2-tank.webp") no-repeat 180% top,
-url("project/img/s2-tank-remote_res.webp") no-repeat center,
-url("project/img/s2-tank.webp") no-repeat -30% bottom;
+background: url("project/img/s2-tank-remote_res.webp") no-repeat center;
 }
 
 .inner_article:last-child {
@@ -193,6 +191,7 @@ url("project/img/s2-tank.webp") no-repeat -30% bottom;
     font-size: 16px;
     text-align: left;
     margin: auto;
+    z-index: 2;
 }
 
 .inner_article .intro{
@@ -278,15 +277,73 @@ url("project/img/s2-tank.webp") no-repeat -30% bottom;
 
     .tank{
         position: absolute;
-        background: url("project/img/tank_with_turret.png") no-repeat bottom center;
+        background: url("project/img/tank.webp") no-repeat 50% 15000%;
         height: 100%;
         width: inherit;
+        animation-name: tank-transition;
+        animation-duration: 5s;
+    }
+
+    .first_tank{
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        background-size: cover;
+        top: 33%;
+        width: 100%;
+        height: 525px;
+        background: url("project/img/s2-tank.webp") no-repeat 242%;
+    }
+
+    .second_tank{
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        left: 0;
+        top: 33%;
+        background-size: cover;
+        width: 100%;
+        height: 525px;
+        background: url("project/img/s2-tank.webp") no-repeat -135%;
+    }
+
+    .turret_right {
+        transform: rotate(45deg);
+        /*background: url(project/img/turret.webp)no-repeat 81% -36%;*/
+
+        /*position: absolute;*/
+        width: 100%;
+        left: 35%;
+        top: 25%;
+        height: 370px;
+    }
+
+    .turret_left {
+        transform: rotate(320deg);
+        /*background: url(project/img/turret.webp)no-repeat 46% -7%;*/
+
+        /*position: absolute;*/
+        width: 100%;
+        height: 276px;
+        top: 33%;
+        right: 38%;
+    }
+
+    .turret_straight {
+        position: absolute;
+        background: url("project/img/turret.webp")no-repeat 50% 200%;
+        width: 100%;
+        height: 100%;
+        top: 0;
     }
 
     .background-tank {
         position: absolute;
-        width: 100%;
-        height: 100%;
+        width: 350px;
+        height: 610px;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
     }
 
     .inner_article h3 {
@@ -301,15 +358,12 @@ url("project/img/s2-tank.webp") no-repeat -30% bottom;
     }
 
     .inner_article:nth-child(2) {
-        background: url("project/img/s2-tank.webp") no-repeat 240% bottom,
-        url("project/img/s2-tank.webp") no-repeat -135% bottom,
-        url("project/img/s2-tank-remote.webp") no-repeat center;
+        background: url("project/img/s2-tank-remote_res.webp")  no-repeat 27% 36%;
     }
 
     .inner_article:first-child {
         background: url("project/img/s1-tanks.webp") no-repeat left,
-        url("project/img/s1-rock-left.webp") no-repeat bottom left,
-        url("project/img/s1-rock-right.webp") no-repeat 100% 70%;
+        url("project/img/s1-rock-left.webp") no-repeat bottom left;
         background-size: auto;
     }
 
