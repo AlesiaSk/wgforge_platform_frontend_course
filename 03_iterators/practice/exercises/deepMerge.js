@@ -35,7 +35,7 @@ export default function deepMerge(destinationObject, sourceObject) {
           deepMerge(destinationObject[key][value], sourceObject[key][value]);
         }
       }
-    } else if (sourceObject[key] !== undefined) {
+    } else if (sourceObject[key] !== undefined && sourceObject[key] !== null) {
       destinationObject[key] = sourceObject[key];
     }
   }
